@@ -1,0 +1,9 @@
+{% extends 'accounts/index.html' %}
+
+{% block content %}
+  <form class="" action="{% url 'accounts:register' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class='btn btn-primary' name="button">register</button>
+  </form>
+{% endblock %}

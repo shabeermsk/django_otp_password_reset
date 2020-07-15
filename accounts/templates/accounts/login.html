@@ -1,0 +1,14 @@
+{% extends 'accounts/index.html' %}
+
+
+{% block content %}
+  <form class="" action="{% url 'accounts:login' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class='btn btn-primary' name="button">login</button>
+  </form>
+  <br>
+  <a href="{% url 'accounts:sendotp' %}">Forgot password?</a>
+  <a href="{% url 'accounts:register' %}">Register</a>
+
+{% endblock %}
